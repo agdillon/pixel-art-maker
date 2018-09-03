@@ -1,0 +1,29 @@
+.row {
+  height: 19px;
+}
+
+.cell {
+  display: inline-block;
+  height: 100%;
+  width: 19px;
+  border: 1px solid black;
+}
+
+.color {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+.indicator {
+  display: inline-block;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+}
+
+#grid {
+  height: 525px;
+  width: 525px;
+}
