@@ -1,29 +1,48 @@
+h1 {
+  font-family: 'VT323', monospace;
+  text-align: center;
+}
+
 .row {
-  height: 19px;
+  height: 20px;
 }
 
 .cell {
   display: inline-block;
   height: 100%;
-  width: 19px;
-  border: 1px solid black;
+  width: 20px;
+  border-width: 0 1px 1px 0;
+  border-style: solid;
 }
 
 .color {
+  border-radius: 50%;
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   border: 1px solid black;
+  margin: 0 0 1px 3px;
 }
 
 .indicator {
+  border-radius: 50%;
   display: inline-block;
-  height: 50px;
-  width: 50px;
+  height: 35px;
+  width: 35px;
   border: 1px solid black;
+  margin: 30px 0 0 3px;
+}
+
+#container {
+  margin: 0 auto;
 }
 
 #grid {
-  height: 525px;
-  width: 525px;
+  display: inline-block;
+}
+
+#palette {
+  display: inline-block;
+  height: 400px;
+  width: 40px;
 }

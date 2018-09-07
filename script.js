@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
   let grid = document.getElementById("grid")
-  let gridSize = 24
-  let colorNames = ["red", "orange", "yellow", "green", "blue", "purple", "black", "white", "SaddleBrown"]
+  let container = document.getElementById("container")
+  let pixels = 24
+  let colorNames = ["red", "orange", "yellow", "green", "blue", "purple", "black", "white", "gray", "SaddleBrown"]
   let currentColor = ""
   let cell, row, col, colorCell, indicator
+
+  // pixels * width of each pixel (20px) + (pixels + 1) * border (1px) = total grid size
+  grid.style.width = (pixels * 21 + 1) + "px"
+  grid.style.height = (pixels * 21 + 1) + "px"
+  container.style.width = (pixels * 21 + 50) + "px"
 
   function changeColor(event) {
     event.target.style.backgroundColor = currentColor
@@ -15,22 +21,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function makeGrid() {
-    for (let rows = 0; rows < gridSize; rows++) {
+    for (let rows = 0; rows < pixels; rows++) {
       row = document.createElement("div")
       row.className = "row"
-      // row.style.height = 100/gridSize + "%"
-      for (let cols = 0; cols < gridSize; cols++) {
+
+      for (let cols = 0; cols < pixels; cols++) {
         cell = document.createElement("div")
         cell.className = "cell"
 
-        // if (rows === 0) {
-        //   cell.style.borderTop = "1px solid black"
-        // }
-        // if (cols === 0) {
-        //   cell.style.borderLeft = "1px solid black"
-        // }
+        if (rows === 0) {
+          cell.style.borderTop = "1px solid black"
+        }
+        if (cols === 0) {
+          cell.style.borderLeft = "1px solid black"
+        }
 
-        // cell.style.width = 100/gridSize + "%"
         row.appendChild(cell)
       }
       grid.appendChild(row)
@@ -54,6 +59,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
   indicator = document.createElement("div")
   indicator.className = "indicator"
-  indicator.textContent = "current color"
   palette.appendChild(indicator)
 })
