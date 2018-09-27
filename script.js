@@ -12,7 +12,9 @@ document.addEventListener("DOMContentLoaded", function () {
   container.style.width = (pixels * 21 + 50) + "px"
 
   function changeColor(event) {
-    event.target.style.backgroundColor = currentColor
+    if (event.target.className === "cell") {
+      event.target.style.backgroundColor = currentColor
+    }
   }
 
   function selectColor(event) {
